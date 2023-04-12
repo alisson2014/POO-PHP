@@ -10,12 +10,12 @@ class People
         string $cpfAccount
     ) {
         $constructValidate = $this->validateName($nameAccount) && $this->validateCpf($cpfAccount);
-        if ($constructValidate) {
-            $this->nameAccount = $nameAccount;
-            $this->cpfAccount = $cpfAccount;
+        if (!$constructValidate) {
+            throw new Exception("Erro, nome deve ter 5 ou mais caracteres.");
         }
 
-        throw new Exception("Erro, nome deve ter 5 ou mais caracteres.");
+        $this->nameAccount = $nameAccount;
+        $this->cpfAccount = $cpfAccount;
     }
 
     public function getName(): string

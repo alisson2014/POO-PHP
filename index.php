@@ -1,10 +1,7 @@
 <?php
 
-require_once "class/Account.php";
-require_once "class/Adress.php";
-require_once "class/Client.php";
+require_once "class/People.php";
 
-$endereco = new Adress("campo mourao", "jd albuquerque", "joag", "455");
-$conta = new Client("Joao mou", "119.798.466-10", $endereco);
+$novaPessoa = new People("Mi", "156.466.888-15");
 
-echo var_dump($conta);
+echo var_dump($novaPessoa);
