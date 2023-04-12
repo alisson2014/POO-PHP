@@ -30,23 +30,26 @@ class Account
 
     public function withdraw(float $amount): string
     {
-        if ($amount > $this->balance) {
-            return "Saldo insuficiente!";
+        $balance = $this->balance;
+        if ($amount > $balance) {
+            return "Saldo insuficiente!" . PHP_EOL . "Seu saldo: $balance";
         }
 
-        $newBalance = $this->balance - $amount;
+        $newBalance = $balance - $amount;
         $this->balance -= $amount;
-        return "Saque realizado com sucesso" . PHP_EOL . "Novo saldo $newBalance";
+        return "Saque realizado com sucesso, novo saldo: $newBalance";
     }
 
     public function deposit(float $amount): string
     {
+        $balance = $this->balance;
         if ($amount < 0) {
-            return "Valor deve ser positivo";
+            return "Valor deve ser positivo!";
         }
 
+        $newBalance = $balance + $amount;
         $this->balance += $amount;
-        return "Deposito realizado com sucesso";
+        return "Deposito realizado com sucesso" . PHP_EOL . "Novo saldo: $newBalance";
     }
 
     public function transfer(float $amount, Account $destiny): string
@@ -59,7 +62,6 @@ class Account
         $destiny->deposit($amount);
         return "R$ {$amount} transferido com sucesso!";
     }
-
 
     public static function getTotalAccounts(): int
     {

@@ -38,4 +38,24 @@ class Adress
     {
         return $this->number;
     }
+
+    public function setCity(string $newCity): void
+    {
+        $this->city = $newCity;
+    }
+
+    public function setNeighborhood(string $newNeighborhood): void
+    {
+        $this->neighborhood = $newNeighborhood;
+    }
+
+    public function setRoad(string $newRoad): void
+    {
+        $this->road = $newRoad;
+    }
+
+    public function setNumber(string $newNumber): void
+    {
+        $this->number = $newNumber;
+    }
 }

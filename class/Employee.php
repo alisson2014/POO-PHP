@@ -25,10 +25,10 @@ class Employee extends People
         return "Cargo alterado para $newOffice";
     }
 
-    public function setName(string $newName): void
+    private function setName(string $newName): void
     {
         if ($this->validateName($newName)) {
-            $this->nameAccount = $newName;
+            $this->name = $newName;
         }
     }
 }
