@@ -1,8 +1,10 @@
 <?php
 
-require_once "class/Account.php";
-require_once "class/Adress.php";
-require_once "class/Client.php";
+require_once "autoload.php";
+
+use POO_PHP\Bank\Model\Adress;
+use POO_PHP\Bank\Model\Account\Account;
+use POO_PHP\Bank\Model\Account\Client;
 
 $address1 = new Adress("Campo Mourão", "Jd Araucaria", "R São José", "466");
 $client1 = new Client("Irineu", "116.199.466-16", $address1);

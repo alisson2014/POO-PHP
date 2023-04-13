@@ -1,5 +1,9 @@
 <?php
 
+namespace POO_PHP\Bank\Model;
+
+use Exception;
+
 class People
 {
     protected string $name;

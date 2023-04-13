@@ -1,5 +1,9 @@
 <?php
 
+namespace POO_PHP\Bank\Model\Account;
+
+use POO_PHP\Bank\Model\Account\Client;
+
 class Account
 {
     private Client $client;

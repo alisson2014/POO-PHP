@@ -1,6 +1,8 @@
 <?php
 
-require_once "People.php";
+namespace POO_PHP\Bank\Model;
+
+use POO_PHP\Bank\Model\People;
 
 class Employee extends People
 {

@@ -1,6 +1,9 @@
 <?php
 
-require_once "People.php";
+namespace POO_PHP\Bank\Model\Account;
+
+use POO_PHP\Bank\Model\People;
+use POO_PHP\Bank\Model\Adress;
 
 class Client extends People
 {

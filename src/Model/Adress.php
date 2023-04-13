@@ -1,5 +1,7 @@
 <?php
 
+namespace POO_PHP\Bank\Model;
+
 class Adress
 {
     private string $city;
