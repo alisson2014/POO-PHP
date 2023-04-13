@@ -4,7 +4,7 @@ namespace POO_PHP\Bank\Model\Account;
 
 use POO_PHP\Bank\Model\Account\Client;
 
-class Account
+abstract class Account
 {
     private Client $client;
     private float $balance = 0;
@@ -34,13 +34,13 @@ class Account
 
     public function withdraw(float $amount): string
     {
-        $balance = $this->balance;
-        if ($amount > $balance) {
-            return "Saldo insuficiente!" . PHP_EOL . "Seu saldo: $balance";
+        $withdrawAmount = $amount * (1 + $this->getRate());
+        if ($amount > $withdrawAmount) {
+            return "Saldo insuficiente!" . PHP_EOL . "Seu saldo: {$this->balance}";
         }
 
-        $newBalance = $balance - $amount;
-        $this->balance -= $amount;
+        $newBalance = $this->balance - $withdrawAmount;
+        $this->balance -= $withdrawAmount;
         return "Saque realizado com sucesso, novo saldo: $newBalance";
     }
 
@@ -56,19 +56,10 @@ class Account
         return "Deposito realizado com sucesso" . PHP_EOL . "Novo saldo: $newBalance";
     }
 
-    public function transfer(float $amount, Account $destiny): string
-    {
-        if ($amount > $this->balance) {
-            return "Saldo insuficiente";
-        }
-
-        $this->withdraw($amount);
-        $destiny->deposit($amount);
-        return "R$ {$amount} transferido com sucesso!";
-    }
-
     public static function getTotalAccounts(): int
     {
         return self::$totalAccounts;
     }
+
+    abstract protected function getRate(): float;
 }
