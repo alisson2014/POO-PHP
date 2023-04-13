@@ -1,4 +1,5 @@
 <?php
+
 require_once "People.php";
 
 class Client extends People
