@@ -10,4 +10,9 @@ class Manager extends Employee
     {
         return $this->getWage();
     }
+
+    public function setOffice(): string
+    {
+        return "Gerente";
+    }
 }

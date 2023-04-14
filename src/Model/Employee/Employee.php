@@ -8,18 +8,17 @@ use Exception;
 //Funcionário
 abstract class Employee extends People
 {
-    private string $office;
+    protected string $office;
     private float $wage;
 
     public function __construct(
         string $nameEmployee,
         string $cpfEmployee,
-        string $office,
         float $wage
     ) {
         parent::__construct($nameEmployee, $cpfEmployee);
-        $this->office = $office;
         $this->wage = $wage;
+        $this->office = $this->setOffice();
     }
 
     public function getOffice(): string
@@ -30,17 +29,6 @@ abstract class Employee extends People
     public function getWage(): float
     {
         return $this->wage;
-    }
-
-    public function calcBonus(): float
-    {
-        return $this->wage * 0.1;
-    }
-
-    public function setOffice(string $newOffice): string
-    {
-        $this->office = $newOffice;
-        return "Cargo alterado para $newOffice";
     }
 
     public function setName(string $newName): void
@@ -58,4 +46,6 @@ abstract class Employee extends People
 
         $this->wage += $riseValue;
     }
+    abstract protected function setOffice(): string;
+    abstract public function calcBonus(): float;
 }

@@ -2,15 +2,16 @@
 
 require_once "autoload.php";
 
-use POO_PHP\Bank\Model\Employee\{Developer, Director, Manager};
+use POO_PHP\Bank\Model\Employee\{Developer, Director, Manager, VideoEditor};
 
 //Employees 
-$director = new Director("Wagner", "122.466.187-05", "Diretor de TI", 39000);
-$manager = new Manager("André Cabral", "166.455.122-15", "Gerente de Projetos", 14000);
-$developer = new Developer("Matheus", "116.455.711-10", "PHP Developer", 8000);
+$director = new Director("Wagner", "122.466.187-05", 39000);
+$manager = new Manager("André Cabral", "166.455.122-15", 14000);
+$developer = new Developer("Matheus", "116.455.711-10", 8000);
+$editor = new VideoEditor("João Passos", "112.466.123-16", 1000);
 
 //Array com os funcionários
-$employees = [$developer, $manager, $director];
+$employees = [$developer, $manager, $director, $editor];
 
 //Mostra as informções do funcionário (Developer)
 echo "---------Desenvolvedores---------" .
