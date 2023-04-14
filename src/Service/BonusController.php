@@ -2,7 +2,7 @@
 
 namespace POO_PHP\Bank\Service;
 
-use POO_PHP\Bank\Model\Employee;
+use POO_PHP\Bank\Model\Employee\Employee;
 
 class BonusController
 {

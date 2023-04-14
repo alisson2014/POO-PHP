@@ -1,11 +1,12 @@
 <?php
 
-namespace POO_PHP\Bank\Model;
+namespace POO_PHP\Bank\Model\Employee;
 
 use POO_PHP\Bank\Model\People;
+use Exception;
 
 //Funcionário
-class Employee extends People
+abstract class Employee extends People
 {
     private string $office;
     private float $wage;
@@ -47,5 +48,14 @@ class Employee extends People
         if ($this->validateName($newName)) {
             $this->name = $newName;
         }
+    }
+
+    public function getsARise(float $riseValue): void
+    {
+        if ($riseValue < 0) {
+            throw new Exception("Aumento deve ser positivo");
+        }
+
+        $this->wage += $riseValue;
     }
 }

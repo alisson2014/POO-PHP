@@ -2,34 +2,42 @@
 
 require_once "autoload.php";
 
-use POO_PHP\Bank\Model\{Adress, Employee};
-use POO_PHP\Bank\Model\Account\{Client, CheckingAccount};
-use POO_PHP\Bank\Service\BonusController;
+use POO_PHP\Bank\Model\Employee\{Developer, Director, Manager};
 
-//Accounts
-$address1 = new Adress("Campo Mourão", "Jd Araucaria", "R São José", "466");
-$client1 = new Client("Mizuno", "116.711.466-88", $address1);
+//Employees 
+$director = new Director("Wagner", "122.466.187-05", "Diretor de TI", 39000);
+$manager = new Manager("André Cabral", "166.455.122-15", "Gerente de Projetos", 14000);
+$developer = new Developer("Matheus", "116.455.711-10", "PHP Developer", 8000);
 
-$account = new CheckingAccount($client1);
+//Array com os funcionários
+$employees = [$developer, $manager, $director];
 
-//Employes
-$umFuncionario = new Employee(
-    "Vinicius Dias",
-    "123.456.789-10",
-    "Desenvolvedor",
-    1000
-);
+//Mostra as informções do funcionário (Developer)
+echo "---------Desenvolvedores---------" .
+    PHP_EOL . "Nome: {$developer->getName()}" . PHP_EOL .
+    "CPF: {$developer->getCpf()}" . PHP_EOL .
+    "Cargo: {$developer->getOffice()}" . PHP_EOL .
+    "Salário: {$developer->getWage()}" . PHP_EOL;
 
-$umaFuncionaria = new Employee(
-    "Patricia",
-    "987.654.321-10",
-    "Gerente",
-    3000
-);
+//Mostra as informações do funcionário (Manager)
+echo "---------Gerentes---------" .
+    PHP_EOL . "Nome: {$manager->getName()}" . PHP_EOL .
+    "CPF: {$manager->getCpf()}" . PHP_EOL .
+    "Cargo: {$manager->getOffice()}" . PHP_EOL .
+    "Salário: {$manager->getWage()}" . PHP_EOL;
 
+//Mostra as informações do funcionário (Director)
+echo "---------Diretores---------" .
+    PHP_EOL . "Nome: {$director->getName()}" . PHP_EOL .
+    "CPF: {$director->getCpf()}" . PHP_EOL .
+    "Cargo: {$director->getOffice()}" . PHP_EOL .
+    "Salário: {$director->getWage()}" . PHP_EOL;
 
-$controlador = new BonusController();
-$controlador->addBonus($umFuncionario);
-$controlador->addBonus($umaFuncionaria);
-
-echo $controlador->getTotalBonus();
+//Mostra os bonus de cada funcionário
+echo "---------Bonus---------" . PHP_EOL;
+foreach ($employees as $employee) {
+    echo PHP_EOL .
+        "Funcionário: {$employee->getName()}" . PHP_EOL .
+        "Cargo: {$employee->getOffice()}" . PHP_EOL .
+        "Bonus: {$employee->calcBonus()}" . PHP_EOL;
+}
