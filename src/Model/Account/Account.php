@@ -6,7 +6,7 @@ use POO_PHP\Bank\Model\Account\Client;
 
 abstract class Account
 {
-    private Client $client;
+    private readonly Client $client;
     private float $balance = 0;
     private static int $totalAccounts = 0;
 

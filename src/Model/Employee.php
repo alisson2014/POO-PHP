@@ -4,6 +4,7 @@ namespace POO_PHP\Bank\Model;
 
 use POO_PHP\Bank\Model\People;
 
+//Funcionário
 class Employee extends People
 {
     private string $office;
@@ -22,13 +23,13 @@ class Employee extends People
         return $this->office;
     }
 
-    private function setOffice(string $newOffice): string
+    public function setOffice(string $newOffice): string
     {
         $this->office = $newOffice;
         return "Cargo alterado para $newOffice";
     }
 
-    private function setName(string $newName): void
+    public function setName(string $newName): void
     {
         if ($this->validateName($newName)) {
             $this->name = $newName;

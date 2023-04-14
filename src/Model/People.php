@@ -4,18 +4,24 @@ namespace POO_PHP\Bank\Model;
 
 use Exception;
 
-class People
+abstract class People
 {
     protected string $name;
-    private string $cpf;
+    protected readonly string $cpf;
 
     public function __construct(
         string $name,
         string $cpf
     ) {
-        $constructValidate = $this->validateName($name) && $this->validateCpf($cpf);
-        if (!$constructValidate) {
-            throw new Exception("Erro, nome deve ter 5 ou mais caracteres.");
+        $nameValidator = $this->validateName($name);
+        $cpfValidator = $this->validateCpf($cpf);
+
+        if (!$nameValidator && !$cpfValidator) {
+            throw new Exception("Erro, nome e cpf inválidos!");
+        } else if (!$nameValidator) {
+            throw new Exception("Erro, nome inválido!");
+        } else if (!$cpfValidator) {
+            throw new Exception("Erro, cpf inválido!");
         }
 
         $this->name = $name;
@@ -34,11 +40,11 @@ class People
 
     protected function validateName(string $name): bool
     {
-        if (mb_strlen($name) <= 3) {
-            return false;
+        if (strlen($name) > 5) {
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     protected function validateCpf(string $cpf): bool
