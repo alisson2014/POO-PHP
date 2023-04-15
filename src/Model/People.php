@@ -28,12 +28,12 @@ abstract class People
         $this->cpf = $cpf;
     }
 
-    public function getName(): string
+    protected function getName(): string
     {
         return $this->name;
     }
 
-    public function getCpf(): string
+    protected function getCpf(): string
     {
         return $this->cpf;
     }

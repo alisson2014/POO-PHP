@@ -2,12 +2,14 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
+use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\People;
 use Exception;
 
 //Funcionário
 abstract class Employee extends People
 {
+    use AccessProperties;
     protected string $office;
     private float $wage;
 
@@ -21,12 +23,12 @@ abstract class Employee extends People
         $this->office = $this->setOffice();
     }
 
-    public function getOffice(): string
+    private function getOffice(): string
     {
         return $this->office;
     }
 
-    public function getWage(): float
+    private function getWage(): float
     {
         return $this->wage;
     }
@@ -48,4 +50,10 @@ abstract class Employee extends People
     }
     abstract protected function setOffice(): string;
     abstract public function calcBonus(): float;
+    public function __toString(): string
+    {
+        return "Nome: {$this->name}" . PHP_EOL .
+            "Cargo: {$this->office}" . PHP_EOL .
+            "Salário: {$this->wage}" . PHP_EOL;
+    }
 }
