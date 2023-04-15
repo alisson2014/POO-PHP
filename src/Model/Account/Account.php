@@ -2,11 +2,13 @@
 
 namespace POO_PHP\Bank\Model\Account;
 
+use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Account\Client;
 
 abstract class Account
 {
-    private readonly Client $client;
+    use AccessProperties;
+    protected readonly Client $client;
     private float $balance = 0;
     private static int $totalAccounts = 0;
 
@@ -22,12 +24,12 @@ abstract class Account
         self::$totalAccounts--;
     }
 
-    public function getClient(): Client
+    private function getClient(): Client
     {
         return $this->client;
     }
 
-    public function getBalance(): float
+    protected function getBalance(): float
     {
         return $this->balance;
     }
