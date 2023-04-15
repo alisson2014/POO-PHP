@@ -3,8 +3,7 @@
 namespace POO_PHP\Bank\Model\Account;
 
 use POO_PHP\Bank\Model\Authentication;
-use POO_PHP\Bank\Model\People;
-use POO_PHP\Bank\Model\Adress;
+use POO_PHP\Bank\Model\{People, Adress};
 
 class Client extends People implements Authentication
 {

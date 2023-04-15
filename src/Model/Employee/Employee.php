@@ -2,8 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\AccessProperties;
-use POO_PHP\Bank\Model\People;
+use POO_PHP\Bank\Model\{AccessProperties, People};
 use Exception;
 
 //Funcionário
@@ -28,7 +27,7 @@ abstract class Employee extends People
         return $this->office;
     }
 
-    private function getWage(): float
+    protected function getWage(): float
     {
         return $this->wage;
     }
