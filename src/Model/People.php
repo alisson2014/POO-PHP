@@ -38,7 +38,7 @@ abstract class People
         return $this->cpf;
     }
 
-    protected function validateName(string $name): bool
+    final protected function validateName(string $name): bool
     {
         if (strlen($name) > 5) {
             return true;
@@ -47,7 +47,7 @@ abstract class People
         return false;
     }
 
-    protected function validateCpf(string $cpf): bool
+    final protected function validateCpf(string $cpf): bool
     {
         $cpf = filter_var($cpf, FILTER_VALIDATE_REGEXP, [
             'options' => [

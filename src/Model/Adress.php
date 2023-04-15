@@ -11,8 +11,9 @@ namespace POO_PHP\Bank\Model;
     * @property-read string $number
 */
 
-class Adress
+final class Adress
 {
+    use AccessProperties;
     private string $city;
     private string $neighborhood;
     private string $road;
@@ -68,12 +69,6 @@ class Adress
     private function setNumber(string $newNumber): void
     {
         $this->number = $newNumber;
-    }
-
-    public function __get(string $method)
-    {
-        $method = "get" . ucfirst($method);
-        return $this->$method();
     }
 
     public function __set(string $method, string $value)
