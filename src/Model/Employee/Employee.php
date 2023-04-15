@@ -2,15 +2,14 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\{AccessProperties, People};
+use POO_PHP\Bank\Model\{People};
 use Exception;
 
-//Funcionário
+//TODO: funcionário é uma pessoa
 abstract class Employee extends People
 {
-    use AccessProperties;
     protected string $office;
-    private float $wage;
+    protected float $wage;
 
     public function __construct(
         string $nameEmployee,
@@ -22,7 +21,7 @@ abstract class Employee extends People
         $this->office = $this->setOffice();
     }
 
-    private function getOffice(): string
+    protected function getOffice(): string
     {
         return $this->office;
     }

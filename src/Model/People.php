@@ -4,6 +4,13 @@ namespace POO_PHP\Bank\Model;
 
 use Exception;
 
+/*
+    * class People
+    * @package POO_PHP\Bank\Model
+    * @property-read string $name
+    * @property-read string $cpf
+*/
+
 abstract class People
 {
     protected string $name;
