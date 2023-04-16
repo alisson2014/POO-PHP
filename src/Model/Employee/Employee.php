@@ -2,7 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\{People};
+use POO_PHP\Bank\Model\{AccessProperties, People};
 use Exception;
 
 //TODO: funcionário é uma pessoa

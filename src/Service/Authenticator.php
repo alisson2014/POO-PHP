@@ -10,8 +10,9 @@ class Authenticator
     {
         if ($authentication->authenticate($password)) {
             echo "Ok. Usuário logado no sistema";
-        } else {
-            echo "Ops. Senha incorreta";
+            exit();
         }
+
+        echo "Ops. Senha incorreta";
     }
 }

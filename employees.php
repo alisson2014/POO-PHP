@@ -3,7 +3,9 @@
 require_once "autoload.php";
 
 use POO_PHP\Bank\Model\Employee\{Developer, Director, Manager, VideoEditor};
+use POO_PHP\Bank\Service\Authenticator;
 
+$authenticator = new Authenticator();
 //Employees 
 $director = new Director("Wagner", "122.466.187-05", 39000);
 $manager = new Manager("André Cabral", "166.455.122-15", 14000);
@@ -19,3 +21,5 @@ foreach ($employees as  $employee) {
     echo $employee .
         "----------------------------------" . PHP_EOL;
 }
+
+echo $authenticator->tryLoggin($director, "1234");
