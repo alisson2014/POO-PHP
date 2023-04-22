@@ -2,7 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Account;
 
-use POO_PHP\Bank\Model\Account\Account;
+use POO_PHP\Bank\Model\Account\{Account, InsufficientAmountException};
 
 
 /**
@@ -20,7 +20,10 @@ class CheckingAccount extends Account
     public function transfer(float $amount, Account $destiny): string
     {
         if ($amount > $this->getBalance()) {
-            return "Saldo insuficiente";
+            throw new InsufficientAmountException(
+                $amount,
+                $this->getBalance()
+            );
         }
 
         $this->withdraw($amount);

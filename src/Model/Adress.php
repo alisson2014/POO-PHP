@@ -71,14 +71,16 @@ final class Adress
         $this->number = $newNumber;
     }
 
-    public function __set(string $method, string $value)
+    public function __set(string $method, string $value): void
     {
         $method = "set" . ucfirst($method);
-        return $this->$method($value);
+        $this->$method($value);
     }
 
     public function __toString(): string
     {
-        return "{$this->road}, {$this->number}, {$this->neighborhood}, {$this->city}";
+        return "Rua: {$this->road}, N°: {$this->number}" . PHP_EOL .
+            "Bairro: {$this->neighborhood}" . PHP_EOL .
+            "Cidade: {$this->city}" . PHP_EOL;
     }
 }

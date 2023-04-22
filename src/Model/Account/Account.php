@@ -2,6 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Account;
 
+use InvalidArgumentException;
 use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Account\Client;
 
@@ -35,7 +36,7 @@ abstract class Account
         self::$totalAccounts--;
     }
 
-    private function getClient(): Client
+    protected function getClient(): Client
     {
         return $this->client;
     }
@@ -48,8 +49,11 @@ abstract class Account
     public function withdraw(float $amount): string
     {
         $withdrawAmount = $amount * (1 + $this->getRate());
-        if ($amount > $withdrawAmount) {
-            return "Saldo insuficiente!" . PHP_EOL . "Seu saldo: {$this->balance}";
+        if ($withdrawAmount > $this->getBalance()) {
+            throw new InsufficientAmountException(
+                $withdrawAmount,
+                $this->getBalance()
+            );
         }
 
         $newBalance = $this->balance - $withdrawAmount;
@@ -61,7 +65,7 @@ abstract class Account
     {
         $balance = $this->balance;
         if ($amount < 0) {
-            return "Valor deve ser positivo!";
+            throw new InvalidArgumentException("Valor deve ser positivo");
         }
 
         $newBalance = $balance + $amount;
