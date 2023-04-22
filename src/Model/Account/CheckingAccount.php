@@ -4,7 +4,12 @@ namespace POO_PHP\Bank\Model\Account;
 
 use POO_PHP\Bank\Model\Account\Account;
 
-//Conta corrente
+
+/**
+ * class CheckingAccount
+ * @package POO_PHP\Bank\Model\Account
+ * @method string transfer(float $amount, Account $destiny)
+ */
 class CheckingAccount extends Account
 {
     public function getRate(): float

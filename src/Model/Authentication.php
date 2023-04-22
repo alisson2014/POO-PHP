@@ -2,11 +2,11 @@
 
 namespace POO_PHP\Bank\Model;
 
-/*
-    * interface Authentication
-    * @package POO_PHP\Bank\Model
-    * @method authenticate(string $password): bool
-*/
+/** 
+ * interface Authentication
+ * @package POO_PHP\Bank\Model
+ * @method bool authenticate(string $password)
+ */
 
 interface Authentication
 {

@@ -5,6 +5,17 @@ namespace POO_PHP\Bank\Model\Account;
 use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Account\Client;
 
+
+/**
+ * class Account
+ * @package POO_PHP\Bank\Model\Account
+ * @property float $balance
+ * @property int $totalAccounts
+ * @method string withdraw(float $amount)
+ * @method string deposit(float $amount)
+ * @static int getTotalAccounts()
+ * @abstract float getRate()
+ */
 abstract class Account
 {
     use AccessProperties;

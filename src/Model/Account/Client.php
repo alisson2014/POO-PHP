@@ -5,6 +5,11 @@ namespace POO_PHP\Bank\Model\Account;
 use POO_PHP\Bank\Model\Authentication;
 use POO_PHP\Bank\Model\{People, Adress};
 
+/**
+ * class Client
+ * @package POO_PHP\Bank\Model\Account
+ * @property Adress $adress
+ */
 class Client extends People implements Authentication
 {
     private Adress $adress;

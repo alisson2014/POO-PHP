@@ -2,14 +2,14 @@
 
 namespace POO_PHP\Bank\Model;
 
-/*
-    * class Adress
-    * @package POO_PHP\Bank\Model
-    * @property-read string $city
-    * @property-read string $neighborhood
-    * @property-read string $road
-    * @property-read string $number
-*/
+/**
+ * class Adress
+ * @package POO_PHP\Bank\Model
+ * @property string $city
+ * @property string $neighborhood
+ * @property string $road
+ * @property string $number
+ */
 
 final class Adress
 {

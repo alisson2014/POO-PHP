@@ -4,6 +4,11 @@ namespace POO_PHP\Bank\Model\Employee;
 
 use POO_PHP\Bank\Model\Employee\Employee;
 
+
+/**
+ * class VideoEditor
+ * @package POO_PHP\Bank\Model\Employee
+ */
 class VideoEditor extends Employee
 {
     public function calcBonus(): float

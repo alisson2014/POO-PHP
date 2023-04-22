@@ -4,6 +4,10 @@ namespace POO_PHP\Bank\Service;
 
 use POO_PHP\Bank\Model\Authentication;
 
+/**
+ * class Authenticator
+ * @method void tryLoggin(Authentication $authentication, string $password)
+ */
 class Authenticator
 {
     public function tryLoggin(Authentication $authentication, string $password): void

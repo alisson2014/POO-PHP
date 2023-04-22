@@ -2,10 +2,15 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\{AccessProperties, People};
+use POO_PHP\Bank\Model\{People};
 use Exception;
 
-//TODO: funcionário é uma pessoa
+/**
+ * class Employee
+ * @package POO_PHP\Bank\Model\Employee
+ * @property string $office
+ * @property float $wage
+ */
 abstract class Employee extends People
 {
     protected string $office;

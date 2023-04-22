@@ -5,7 +5,12 @@ namespace POO_PHP\Bank\Model\Employee;
 use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Employee\Employee;
 
-//TODO: desenvolvedor é um funcionário
+
+/**
+ * class Developer
+ * @package POO_PHP\Bank\Model\Employee
+ * @method void levelUp()
+ */
 class Developer extends Employee
 {
     use AccessProperties;

@@ -2,14 +2,14 @@
 
 namespace POO_PHP\Bank\Model;
 
-use Exception;
+use InvalidArgumentException;
 
-/*
-    * class People
-    * @package POO_PHP\Bank\Model
-    * @property-read string $name
-    * @property-read string $cpf
-*/
+/**
+ * class People
+ * @package POO_PHP\Bank\Model
+ * @property string $name
+ * @property-read string $cpf
+ */
 
 abstract class People
 {
@@ -24,11 +24,11 @@ abstract class People
         $cpfValidator = $this->validateCpf($cpf);
 
         if (!$nameValidator && !$cpfValidator) {
-            throw new Exception("Erro, nome e cpf inválidos!");
+            throw new InvalidArgumentException("Erro, nome e cpf inválidos!");
         } else if (!$nameValidator) {
-            throw new Exception("Erro, nome inválido!");
+            throw new InvalidArgumentException("Erro, nome inválido!");
         } else if (!$cpfValidator) {
-            throw new Exception("Erro, cpf inválido!");
+            throw new InvalidArgumentException("Erro, cpf inválido!");
         }
 
         $this->name = $name;
