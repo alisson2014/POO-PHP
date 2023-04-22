@@ -23,16 +23,10 @@ abstract class People
         $nameValidator = $this->validateName($name);
         $cpfValidator = $this->validateCpf($cpf);
 
-        if (!$nameValidator && !$cpfValidator) {
-            throw new InvalidArgumentException("Erro, nome e cpf inválidos!");
-        } else if (!$nameValidator) {
-            throw new InvalidArgumentException("Erro, nome inválido!");
-        } else if (!$cpfValidator) {
-            throw new InvalidArgumentException("Erro, cpf inválido!");
+        if ($nameValidator && $cpfValidator) {
+            $this->name = $name;
+            $this->cpf = $cpf;
         }
-
-        $this->name = $name;
-        $this->cpf = $cpf;
     }
 
     protected function getName(): string
@@ -47,11 +41,11 @@ abstract class People
 
     final protected function validateName(string $name): bool
     {
-        if (strlen($name) > 5) {
-            return true;
+        if (strlen($name) < 5) {
+            throw new InvalidArgumentException("Erro, nome deve conter 5 ou mais caracteres!");
         }
 
-        return false;
+        return true;
     }
 
     final protected function validateCpf(string $cpf): bool
@@ -63,7 +57,7 @@ abstract class People
         ]);
 
         if ($cpf === false) {
-            return false;
+            throw new InvalidArgumentException("Erro, cpf inválido!");
         }
 
         return true;

@@ -3,7 +3,7 @@
 namespace POO_PHP\Bank\Model\Employee;
 
 use POO_PHP\Bank\Model\{People};
-use Exception;
+use InvalidArgumentException;
 
 /**
  * class Employee
@@ -46,7 +46,7 @@ abstract class Employee extends People
     public function getsARise(float $riseValue): void
     {
         if ($riseValue < 0) {
-            throw new Exception("Aumento deve ser positivo");
+            throw new InvalidArgumentException("Aumento deve ser positivo");
         }
 
         $this->wage += $riseValue;

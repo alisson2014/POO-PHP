@@ -6,7 +6,7 @@ use POO_PHP\Bank\Model\Account\{CheckingAccount, Client, InsufficientAmountExcep
 use POO_PHP\Bank\Model\Adress;
 
 $adress = new Adress("Campo grande", "Palmares", "Rua C. Índio Bandeira", "15a");
-$client = new Client("João inácio", "115.466.811-12", $adress);
+$client = new Client("João", "115.465.445-46", $adress);
 $account = new CheckingAccount($client);
 
 echo $account->deposit(500) . PHP_EOL;
