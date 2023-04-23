@@ -14,6 +14,7 @@ namespace POO_PHP\Bank\Model;
 final class Adress
 {
     use AccessProperties;
+    use SetProperties;
     private string $city;
     private string $neighborhood;
     private string $road;
@@ -69,12 +70,6 @@ final class Adress
     private function setNumber(string $newNumber): void
     {
         $this->number = $newNumber;
-    }
-
-    public function __set(string $method, string $value): void
-    {
-        $method = "set" . ucfirst($method);
-        $this->$method($value);
     }
 
     public function __toString(): string
