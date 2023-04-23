@@ -36,13 +36,6 @@ abstract class Employee extends People
         return $this->wage;
     }
 
-    public function setName(string $newName): void
-    {
-        if ($this->validateName($newName)) {
-            $this->name = $newName;
-        }
-    }
-
     public function getsARise(float $riseValue): void
     {
         if ($riseValue < 0) {

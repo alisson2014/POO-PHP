@@ -2,8 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Account;
 
-use POO_PHP\Bank\Model\Authentication;
-use POO_PHP\Bank\Model\{People, Adress};
+use POO_PHP\Bank\Model\{AccessProperties, People, Adress, Authentication};
 
 /**
  * class Client
@@ -12,6 +11,7 @@ use POO_PHP\Bank\Model\{People, Adress};
  */
 class Client extends People implements Authentication
 {
+    use AccessProperties;
     private Adress $adress;
 
     public function __construct(

@@ -39,6 +39,13 @@ abstract class People
         return $this->cpf;
     }
 
+    protected function setName(string $newName): void
+    {
+        if ($this->validateName($newName)) {
+            $this->name = $newName;
+        }
+    }
+
     final protected function validateName(string $name): bool
     {
         if (strlen($name) < 5) {

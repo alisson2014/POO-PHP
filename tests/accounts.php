@@ -17,3 +17,5 @@ try {
 } catch (InsufficientAmountException $e) {
     echo "Saldo insulficiente" . PHP_EOL;
 }
+
+echo $client->name;
