@@ -2,7 +2,6 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Employee\Employee;
 
 
@@ -13,7 +12,6 @@ use POO_PHP\Bank\Model\Employee\Employee;
  */
 class Developer extends Employee
 {
-    use AccessProperties;
     public function levelUp(): void
     {
         $this->getsARise($this->getWage() * 0.75);

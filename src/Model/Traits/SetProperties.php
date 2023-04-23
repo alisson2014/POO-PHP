@@ -1,6 +1,6 @@
 <?php
 
-namespace POO_PHP\Bank\Model;
+namespace POO_PHP\Bank\Model\Traits;
 
 /**
  * trait SetProperties

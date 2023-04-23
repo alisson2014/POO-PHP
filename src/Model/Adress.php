@@ -2,6 +2,8 @@
 
 namespace POO_PHP\Bank\Model;
 
+use POO_PHP\Bank\Model\Traits\{AccessProperties, SetProperties};
+
 /**
  * class Adress
  * @package POO_PHP\Bank\Model

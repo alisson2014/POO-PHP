@@ -3,9 +3,8 @@
 namespace POO_PHP\Bank\Model\Account;
 
 use InvalidArgumentException;
-use POO_PHP\Bank\Model\AccessProperties;
 use POO_PHP\Bank\Model\Account\Client;
-
+use POO_PHP\Bank\Model\Traits\{AccessProperties, SetProperties};
 
 /**
  * class Account
@@ -20,6 +19,7 @@ use POO_PHP\Bank\Model\Account\Client;
 abstract class Account
 {
     use AccessProperties;
+    use SetProperties;
     protected readonly Client $client;
     private float $balance = 0;
     private static int $totalAccounts = 0;
