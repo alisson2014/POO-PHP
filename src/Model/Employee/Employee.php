@@ -2,7 +2,7 @@
 
 namespace POO_PHP\Bank\Model\Employee;
 
-use POO_PHP\Bank\Model\{People};
+use POO_PHP\Bank\Model\{People, AccessProperties, SetProperties};
 use InvalidArgumentException;
 
 /**
@@ -13,6 +13,8 @@ use InvalidArgumentException;
  */
 abstract class Employee extends People
 {
+    use AccessProperties;
+    use SetProperties;
     protected string $office;
     protected float $wage;
 
